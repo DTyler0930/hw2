@@ -83,6 +83,46 @@ Studio.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
+### MOVIES ###
+
+new_movie = Movie.new
+new_movie = ["title"] = "Batman Begins"
+new_movie = ["release year"] = "2005"
+new_movie = ["rated"] = "PG-13"
+new_movie = ["studio"] = 1
+new_movie.save
+
+new_movie = Movie.new
+new_movie = ["title"] = "The Dark Knight"
+new_movie = ["release year"] = "2008"
+new_movie = ["rated"] = "PG-13"
+new_movie = ["studio"] = 1
+new_movie.save
+
+new_movie = Movie.new
+new_movie = ["title"] = "The Dark Knight Rises"
+new_movie = ["release year"] = "2012"
+new_movie = ["rated"] = "PG-13"
+new_movie = ["studio"] = 1
+new_movie.save
+
+### ACTORS ###
+
+new_actor = Actor.new
+new_actor = [Name] = "Christian Bale"
+new_actor = Actor.new
+new_actor = [Name] = "Michael Caine"
+new_actor = Actor.new
+new_actor = [Name] = "Liam Neeson"
+new_actor = Actor.new
+new_actor = [Name] = "Katie Holmes"
+new_actor = Actor.new
+new_actor = [Name] = "Gary Oldman"
+
+### ROLE ###
+
+new_role = Role.new
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
