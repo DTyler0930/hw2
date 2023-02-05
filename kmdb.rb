@@ -76,7 +76,6 @@ Role.destroy_all
 Studio.destroy_all
 
 
-
 # Generate models and tables, according to the domain model.
 # TODO!
 
