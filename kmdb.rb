@@ -128,6 +128,12 @@ new_actor.save
 
 new_role = Role.new
 
+### STUDIO ###
+
+new_studio = Studio.new
+new_studio[name] = "Warner Bros"
+new_studio.save
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
