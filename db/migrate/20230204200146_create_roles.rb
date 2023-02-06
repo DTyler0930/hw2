@@ -3,7 +3,7 @@ class CreateRoles < ActiveRecord::Migration[7.0]
     create_table :roles do |t|
       t.integer "movie_id"
       t.integer "actor_id"
-      t.string "charachter name"
+      t.string "name"
       t.timestamps
     end
   end

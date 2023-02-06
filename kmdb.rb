@@ -83,56 +83,58 @@ Studio.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
+### STUDIO ###
+
+new_studio = Studio.new
+new_studio["name"] = "Warner Bros"
+new_studio.save
+
 ### MOVIES ###
+studio = Studio.find_by({"name" => "Warner Bros"})
 
 new_movie = Movie.new
 new_movie["title"] = "Batman Begins"
 new_movie["release year"] = "2005"
 new_movie["rated"] = "PG-13"
-new_movie["studio"] = 1
+new_movie["studio_id"] = studio["id"]
 new_movie.save
 
 new_movie = Movie.new
 new_movie["title"] = "The Dark Knight"
 new_movie["release year"] = "2008"
 new_movie["rated"] = "PG-13"
-new_movie["studio"] = 1
+new_movie["studio_id"] = studio["id"]
 new_movie.save
 
 new_movie = Movie.new
 new_movie["title"] = "The Dark Knight Rises"
 new_movie["release year"] = "2012"
 new_movie["rated"] = "PG-13"
-new_movie["studio"] = 1
+new_movie["studio_id"] = studio["id"]
 new_movie.save
 
 ### ACTORS ###
 
 new_actor = Actor.new
-new_actor[Name] = "Christian Bale"
+new_actor["name"] = "Christian Bale"
 new_actor.save
 new_actor = Actor.new
-new_actor[Name] = "Michael Caine"
+new_actor["name"] = "Michael Caine"
 new_actor.save
 new_actor = Actor.new
-new_actor[Name] = "Liam Neeson"
+new_actor["name"] = "Liam Neeson"
 new_actor.save
 new_actor = Actor.new
-new_actor[Name] = "Katie Holmes"
+new_actor["name"] = "Katie Holmes"
 new_actor.save
 new_actor = Actor.new
-new_actor[Name] = "Gary Oldman"
+new_actor["name"] = "Gary Oldman"
 new_actor.save
 
 ### ROLE ###
 
 new_role = Role.new
 
-### STUDIO ###
-
-new_studio = Studio.new
-new_studio[name] = "Warner Bros"
-new_studio.save
 
 # Prints a header for the movies output
 puts "Movies"
@@ -141,7 +143,14 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+for movie in Movie.all
+    title = movie["title"]
+    year = movie["release year"]
+    rated = movie["rated"]
+    studio = Studio.find_by({"id" => movie["studio_id"]})
 
+    puts "#{title} #{year} #{rated} #{studio["name"]}"
+end
 # Prints a header for the cast output
 puts ""
 puts "Top Cast"

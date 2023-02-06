@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_02_04_200146) do
   create_table "actors", force: :cascade do |t|
-    t.string "actor name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_04_200146) do
   create_table "roles", force: :cascade do |t|
     t.integer "movie_id"
     t.integer "actor_id"
-    t.string "charachter name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
