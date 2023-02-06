@@ -132,9 +132,108 @@ new_actor["name"] = "Gary Oldman"
 new_actor.save
 
 ### ROLE ###
+movie_1 = Movie.find_by({"title" => "Batman Begins"})
+movie_2 = Movie.find_by({"title" => "The Dark Knight"})
+movie_3 = Movie.find_by({"title" => "The Dark Knight Rises"})
+
+actor_1 = Actor.find_by({"name" => "Christian Bale"})
+actor_2 = Actor.find_by({"name" => "Michael Caine"})
+actor_3 = Actor.find_by({"name" => "Liam Neeson"})
+actor_4 = Actor.find_by({"name" => "Katie Holmes"})
+actor_5 = Actor.find_by({"name" => "Gary Oldman"})
+
+# Batman Begins #
+new_role = Role.new
+new_role["name"] = "Bruce Wayne"
+new_role["movie_id"] = movie_1["id"]
+new_role["actor_id"] = actor_1["id"]
+new_role.save
 
 new_role = Role.new
+new_role["name"] = "Alfred"
+new_role["movie_id"] = movie_1["id"]
+new_role["actor_id"] = actor_2["id"]
+new_role.save
 
+new_role = Role.new
+new_role["name"] = "Ra's Al Ghul"
+new_role["movie_id"] = movie_1["id"]
+new_role["actor_id"] = actor_3["id"]
+new_role.save
+
+new_role = Role.new
+new_role["name"] = "Rachel Dawes"
+new_role["movie_id"] = movie_1["id"]
+new_role["actor_id"] = actor_4["id"]
+new_role.save
+
+new_role = Role.new
+new_role["name"] = "Commissioner Gordon"
+new_role["movie_id"] = movie_1["id"]
+new_role["actor_id"] = actor_5["id"]
+new_role.save
+
+# The Dark Knight  #
+new_role = Role.new
+new_role["name"] = "Bruce Wayne"
+new_role["movie_id"] = movie_2["id"]
+new_role["actor_id"] = actor_1["id"]
+new_role.save
+
+new_role = Role.new
+new_role["name"] = "Alfred"
+new_role["movie_id"] = movie_2["id"]
+new_role["actor_id"] = actor_2["id"]
+new_role.save
+
+new_role = Role.new
+new_role["name"] = "Ra's Al Ghul"
+new_role["movie_id"] = movie_2["id"]
+new_role["actor_id"] = actor_3["id"]
+new_role.save
+
+new_role = Role.new
+new_role["name"] = "Rachel Dawes"
+new_role["movie_id"] = movie_2["id"]
+new_role["actor_id"] = actor_4["id"]
+new_role.save
+
+new_role = Role.new
+new_role["name"] = "Commissioner Gordon"
+new_role["movie_id"] = movie_2["id"]
+new_role["actor_id"] = actor_5["id"]
+new_role.save
+
+# The Dark Knight Rises  #
+new_role = Role.new
+new_role["name"] = "Bruce Wayne"
+new_role["movie_id"] = movie_3["id"]
+new_role["actor_id"] = actor_1["id"]
+new_role.save
+
+new_role = Role.new
+new_role["name"] = "Alfred"
+new_role["movie_id"] = movie_3["id"]
+new_role["actor_id"] = actor_2["id"]
+new_role.save
+
+new_role = Role.new
+new_role["name"] = "Ra's Al Ghul"
+new_role["movie_id"] = movie_3["id"]
+new_role["actor_id"] = actor_3["id"]
+new_role.save
+
+new_role = Role.new
+new_role["name"] = "Rachel Dawes"
+new_role["movie_id"] = movie_3["id"]
+new_role["actor_id"] = actor_4["id"]
+new_role.save
+
+new_role = Role.new
+new_role["name"] = "Commissioner Gordon"
+new_role["movie_id"] = movie_3["id"]
+new_role["actor_id"] = actor_5["id"]
+new_role.save
 
 # Prints a header for the movies output
 puts "Movies"
@@ -159,3 +258,16 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+### LOOP ###
+roles = Role.all
+actors = Actor.all
+for role in roles
+    movie_id = Movie.find_by({"id" => role["movie_id"]})
+    actor_id = Actor.find_by({"id" => ["role_id"]})
+    movie_title = movie_id["title"]
+    actor_name = actor_id["name"]
+    actor_role = role["name"]
+
+    puts "#{movie_title} #{actor_name} #{actor_role}"
+end
