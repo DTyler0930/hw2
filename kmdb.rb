@@ -86,38 +86,43 @@ Studio.destroy_all
 ### MOVIES ###
 
 new_movie = Movie.new
-new_movie = ["title"] = "Batman Begins"
-new_movie = ["release year"] = "2005"
-new_movie = ["rated"] = "PG-13"
-new_movie = ["studio"] = 1
+new_movie["title"] = "Batman Begins"
+new_movie["release year"] = "2005"
+new_movie["rated"] = "PG-13"
+new_movie["studio"] = 1
 new_movie.save
 
 new_movie = Movie.new
-new_movie = ["title"] = "The Dark Knight"
-new_movie = ["release year"] = "2008"
-new_movie = ["rated"] = "PG-13"
-new_movie = ["studio"] = 1
+new_movie["title"] = "The Dark Knight"
+new_movie["release year"] = "2008"
+new_movie["rated"] = "PG-13"
+new_movie["studio"] = 1
 new_movie.save
 
 new_movie = Movie.new
-new_movie = ["title"] = "The Dark Knight Rises"
-new_movie = ["release year"] = "2012"
-new_movie = ["rated"] = "PG-13"
-new_movie = ["studio"] = 1
+new_movie["title"] = "The Dark Knight Rises"
+new_movie["release year"] = "2012"
+new_movie["rated"] = "PG-13"
+new_movie["studio"] = 1
 new_movie.save
 
 ### ACTORS ###
 
 new_actor = Actor.new
-new_actor = [Name] = "Christian Bale"
+new_actor[Name] = "Christian Bale"
+new_actor.save
 new_actor = Actor.new
-new_actor = [Name] = "Michael Caine"
+new_actor[Name] = "Michael Caine"
+new_actor.save
 new_actor = Actor.new
-new_actor = [Name] = "Liam Neeson"
+new_actor[Name] = "Liam Neeson"
+new_actor.save
 new_actor = Actor.new
-new_actor = [Name] = "Katie Holmes"
+new_actor[Name] = "Katie Holmes"
+new_actor.save
 new_actor = Actor.new
-new_actor = [Name] = "Gary Oldman"
+new_actor[Name] = "Gary Oldman"
+new_actor.save
 
 ### ROLE ###
 
